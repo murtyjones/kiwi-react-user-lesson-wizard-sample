@@ -39,22 +39,22 @@ class UserLessonWizard extends Component {
   }
 
   static propTypes = {
-    postUserLesson: T.func.isRequired
-    , putUserLesson: T.func.isRequired
-    , getManyUserLessons: T.func.isRequired
-    , getManyUserVariables: T.func.isRequired
-    , getManyVariables: T.func.isRequired
-    , setTopBarTitle: T.func.isRequired
-    , setGlobalColors: T.func.isRequired
-    , getLesson: T.func.isRequired
-    , lesson: T.object.isRequired
-    , userId: T.string.isRequired
-    , userLesson: T.object.isRequired
-    , initialValues: T.object
-    , history: T.any.isRequired
-    , globalColors: T.any.isRequired
-    , isFetchingUserLessons: T.bool.isRequired
-    , variablesWithUserValues: T.array.isRequired
+    postUserLesson: T.func.isRequired,
+    putUserLesson: T.func.isRequired,
+    getManyUserLessons: T.func.isRequired,
+    getManyUserVariables: T.func.isRequired,
+    getManyVariables: T.func.isRequired,
+    setTopBarTitle: T.func.isRequired,
+    setGlobalColors: T.func.isRequired,
+    getLesson: T.func.isRequired,
+    lesson: T.object.isRequired,
+    userId: T.string.isRequired,
+    userLesson: T.object.isRequired,
+    initialValues: T.object,
+    history: T.any.isRequired,
+    globalColors: T.any.isRequired,
+    isFetchingUserLessons: T.bool.isRequired,
+    variablesWithUserValues: T.array.isRequired
   }
 
   async UNSAFE_componentWillMount() {
@@ -82,10 +82,10 @@ class UserLessonWizard extends Component {
 
   UNSAFE_componentWillReceiveProps(nextProps) {
     const lessonIdHasChanged = !isEqual(this.props.match.params.id, nextProps.match.params.id)
-      , userIdHasChanged = !isEqual(nextProps.userId, this.props.userId)
-      , newGlobalColors = GLOBAL_COLORS.defaultLesson
-      , globalColorsNeedsChanging = nextProps.globalColors.primaryColor !== newGlobalColors.primaryColor
-      , titleNeedsSetting = !isEqual(nextProps.topBarTitle, nextProps.lesson.title)
+    const userIdHasChanged = !isEqual(nextProps.userId, this.props.userId)
+    const newGlobalColors = GLOBAL_COLORS.defaultLesson
+    const globalColorsNeedsChanging = nextProps.globalColors.primaryColor !== newGlobalColors.primaryColor
+    const titleNeedsSetting = !isEqual(nextProps.topBarTitle, nextProps.lesson.title)
 
     if (lessonIdHasChanged || userIdHasChanged) {
       nextProps.getLesson({ id: nextProps.match.params.id })
@@ -108,7 +108,7 @@ class UserLessonWizard extends Component {
   handleSubmit = (params) => {
     const { postUserLesson, putUserLesson } = this.props
     const _id = get(params ,'_id', null)
-      , id = get(params, 'id', null)
+    const id = get(params, 'id', null)
     if (_id) {
       delete params._id
       params.id = _id
@@ -129,8 +129,8 @@ class UserLessonWizard extends Component {
 
   handleFinalSlideNextClick = () =>
     this.props.history.push({
-      pathname: '/lessons'
-      , state: {
+      pathname: '/lessons',
+      state: {
         lessonJustCompletedId: this.props.lesson._id
       }
     })
@@ -166,13 +166,13 @@ export const UserLessonWizardComponent = UserLessonWizard
 
 const mapStateToProps = (state, ownProps) => {
   const {
-    auth: { userId }
-    , lessons: { lessonsById }
-    , userLessons: { userLessonsByLessonId, isFetching }
-    , globalColors
-    , topBar: { topBarTitle }
-    , variables: { variablesById }
-    , userVariables: { userVariablesById }
+    auth: { userId },
+    lessons: { lessonsById },
+    userLessons: { userLessonsByLessonId, isFetching },
+    globalColors,
+    topBar: { topBarTitle },
+    variables: { variablesById },
+    userVariables: { userVariablesById }
   } = state
   const variables = Object.values(variablesById)
   const userVariables = Object.values(userVariablesById)
@@ -207,27 +207,27 @@ const mapStateToProps = (state, ownProps) => {
   })
 
   return {
-    lesson
-    , userLesson
-    , userId
-    , initialValues
-    , globalColors
-    , topBarTitle
-    , isFetchingUserLessons: isFetching
-    , variablesWithUserValues
+    lesson,
+    userLesson,
+    userId,
+    initialValues,
+    globalColors,
+    topBarTitle,
+    isFetchingUserLessons: isFetching,
+    variablesWithUserValues
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    postUserLesson: params => dispatch(postUserLesson(params))
-    , putUserLesson: params => dispatch(putUserLesson(params))
-    , getManyUserLessons: params => dispatch(getManyUserLessons(params))
-    , getManyUserVariables: params => dispatch(getManyUserVariables(params))
-    , getManyVariables: params => dispatch(getManyVariables(params))
-    , getLesson: params => dispatch(getLesson(params))
-    , setGlobalColors: params => dispatch(setGlobalColors(params))
-    , setTopBarTitle: params => dispatch(setTopBarTitle(params))
+    postUserLesson: params => dispatch(postUserLesson(params)),
+    putUserLesson: params => dispatch(putUserLesson(params)),
+    getManyUserLessons: params => dispatch(getManyUserLessons(params)),
+    getManyUserVariables: params => dispatch(getManyUserVariables(params)),
+    getManyVariables: params => dispatch(getManyVariables(params)),
+    getLesson: params => dispatch(getLesson(params)),
+    setGlobalColors: params => dispatch(setGlobalColors(params)),
+    setTopBarTitle: params => dispatch(setTopBarTitle(params))
   }
 }
 

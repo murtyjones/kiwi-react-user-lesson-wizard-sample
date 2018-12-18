@@ -11,22 +11,22 @@ const styles = theme => ({
     background: 'none'
   },
   label: {
-    backgroundColor: '#330000'
-    , marginLeft: '15px'
-    , fontWeight: 'bold'
-    , fontSize: '13pt'
-    , color: '#FFF'
-    , borderRadius: '5px 5px 0 0'
-    , padding: '4px 7px'
-    , textTransform: 'uppercase'
-    , position: 'relative'
-    , top: '-1px'
+    backgroundColor: '#330000',
+    marginLeft: '15px',
+    fontWeight: 'bold',
+    fontSize: '13pt',
+    color: '#FFF',
+    borderRadius: '5px 5px 0 0',
+    padding: '4px 7px',
+    textTransform: 'uppercase',
+    position: 'relative',
+    top: '-1px'
   },
   bubble: {
-    border: '3px solid #330000'
-    , borderRadius: '10px'
-    , padding: '15px'
-    , backgroundColor: '#FFF',
+    border: '3px solid #330000',
+    borderRadius: '10px',
+    padding: '15px',
+    backgroundColor: '#FFF',
     '&$isCodeExample': {
       fontFamily: 'monospace',
       fontSize: '16pt',

@@ -8,14 +8,14 @@ import SpeechBubble from '../SpeechBubble'
 
 const styles = theme => ({
   container: {
-    width: 600
-    , position: 'absolute'
-    , top: '50%'
-    , left: '50%'
-    , marginLeft: -300
-    , marginTop: -250
-    , paddingTop: '5%'
-    , fontSize: '14pt'
+    width: 600,
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    marginLeft: -300,
+    marginTop: -250,
+    paddingTop: '5%',
+    fontSize: '14pt'
   }
 })
 
@@ -25,8 +25,8 @@ class FullPageText extends PureComponent {
   }
 
   static propTypes = {
-    slideData: T.object
-    , className: T.string
+    slideData: T.object,
+    className: T.string
   }
 
   render() {

@@ -7,18 +7,18 @@ import { createVariableNameValuePair } from '../../utils/templateUtils'
 
 const styles = () => ({
   root: {
-    width: 800
-    , height: 600
-    , position: 'absolute'
-    , top: '50%'
-    , left: '50%'
-    , marginLeft: -400
-    , marginTop: -250
-    , paddingTop: '60px'
-    , backgroundImage: 'url(https://res.cloudinary.com/kiwi-prod/image/upload/v1531085546/narration-background_olnutw.svg)'
-    , backgroundSize: '100%'
-    , backgroundPosition: 'center top'
-    , backgroundRepeat: 'no-repeat'
+    width: 800,
+    height: 600,
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    marginLeft: -400,
+    marginTop: -250,
+    paddingTop: '60px',
+    backgroundImage: 'url(https://res.cloudinary.com/kiwi-prod/image/upload/v1531085546/narration-background_olnutw.svg)',
+    backgroundSize: '100%',
+    backgroundPosition: 'center top',
+    backgroundRepeat: 'no-repeat'
   },
   instructions: {
     fontFamily: 'Gaegu',
@@ -40,8 +40,8 @@ class Narration extends PureComponent {
   }
 
   static propTypes = {
-    slideData: T.object
-    , className: T.string
+    slideData: T.object,
+    className: T.string
   }
 
   render() {

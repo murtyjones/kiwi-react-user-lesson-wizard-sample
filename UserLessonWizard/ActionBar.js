@@ -4,33 +4,33 @@ import has from 'lodash/has'
 
 const styles = {
   button: {
-    fontFamily: 'Roboto'
-    , fontSize: '12pt'
-    , display: 'inline-block'
-    , position: 'absolute'
-    , width: '140px'
-    , height: '40px'
-    , top: '11px'
-    , borderRadius: '98px'
-    , textAlign: 'center'
-    , WebkitTextAlign: 'center'
-    , fontWeight: 'bold'
-    , lineHeight: '40px'
-    , border: 'none'
+    fontFamily: 'Roboto',
+    fontSize: '12pt',
+    display: 'inline-block',
+    position: 'absolute',
+    width: '140px',
+    height: '40px',
+    top: '11px',
+    borderRadius: '98px',
+    textAlign: 'center',
+    WebkitTextAlign: 'center',
+    fontWeight: 'bold',
+    lineHeight: '40px',
+    border: 'none'
   },
   prevButton: {
-    left: '20px'
-    , color: '#FFFFFF'
-    , backgroundColor: '#FFFFFF'
+    left: '20px',
+    color: '#FFFFFF',
+    backgroundColor: '#FFFFFF'
   },
   nextButton: {
-    right: '20px'
-    , color: '#FFFFFF'
-    , backgroundColor: '#FFFFFF'
+    right: '20px',
+    color: '#FFFFFF',
+    backgroundColor: '#FFFFFF'
   },
   runCodeButton: {
-    left: '50%'
-    , marginLeft: '-140px'
+    left: '50%',
+    marginLeft: '-140px'
   },
   checkAnswerButton: {
     right: '200px'
@@ -44,11 +44,11 @@ export const PrevButton = ({ onPrevClick, globalColors }) =>
     id='prevButton'
     className={ cns('prevButton', { 'disabled': !onPrevClick }) }
     style={ {
-      ...styles.button
-      , ...styles.prevButton
-      , backgroundColor: globalColors.textColor
-      , color: globalColors.primaryColor
-      , cursor: onPrevClick ? 'pointer' : 'default'
+      ...styles.button,
+      ...styles.prevButton,
+      backgroundColor: globalColors.textColor,
+      color: globalColors.primaryColor,
+      cursor: onPrevClick ? 'pointer' : 'default',
     } }
     onClick={ onPrevClick }
   >
@@ -61,11 +61,11 @@ export const NextButton = ({ onNextClick, globalColors }) =>
     id='nextButton'
     className={ cns('nextButton', { 'disabled': !onNextClick }) }
     style={ {
-      ...styles.button
-      , ...styles.nextButton
-      , backgroundColor: globalColors.textColor
-      , color: globalColors.primaryColor
-      , cursor: onNextClick ? 'pointer' : 'default'
+      ...styles.button,
+      ...styles.nextButton,
+      backgroundColor: globalColors.textColor,
+      color: globalColors.primaryColor,
+      cursor: onNextClick ? 'pointer' : 'default'
     } }
     onClick={ onNextClick }
   >
@@ -79,9 +79,9 @@ export const CheckAnswerButton = ({ onClick }) =>
     id='checkAnswerButton'
     className={ cns('checkAnswerButton', { 'disabled': !onClick }) }
     style={ {
-      ...styles.button
-      , ...styles.checkAnswerButton
-      , cursor: onClick ? 'pointer': 'default'
+      ...styles.button,
+      ...styles.checkAnswerButton,
+      cursor: onClick ? 'pointer': 'default'
     } }
     onClick={ onClick }
   >

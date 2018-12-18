@@ -5,42 +5,42 @@ import { slideContentFlexibleHeight } from './commonSlideStyles'
 
 const styles = {
   container: {
-    width: '600px'
-    , height: '600px'
-    , position: 'absolute'
-    , top: '50%'
-    , left: '50%'
-    , marginLeft: '-300px'
-    , marginTop: '-300px'
+    width: '600px',
+    height: '600px',
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    marginLeft: '-300px',
+    marginTop: '-300px'
   },
   titleContainer: {
-    height: '60%'
-    , width: '80%'
-    , position: 'absolute'
-    , top: '50%'
-    , marginTop: '-30%'
-    , left: '50%'
-    , marginLeft: 'calc(-40% - 50px)' // offsets the paddingLeft of 50px in commonSlideStyles
+    height: '60%',
+    width: '80%',
+    position: 'absolute',
+    top: '50%',
+    marginTop: '-30%',
+    left: '50%',
+    marginLeft: 'calc(-40% - 50px)' // offsets the paddingLeft of 50px in commonSlideStyles
   },
   title: {
-    textAlign: 'center'
-    , fontWeight: 'bold'
-    , fontSize: '24pt'
-    , fontFamily: 'Arvo'
-    , marginTop: '20px'
+    textAlign: 'center',
+    fontWeight: 'bold',
+    fontSize: '24pt',
+    fontFamily: 'Arvo',
+    marginTop: '20px'
   },
   subtitle: {
-    textAlign: 'center'
-    , fontSize: '17pt'
-    , marginBottom: '20px'
-    , fontFamily: 'Arvo'
+    textAlign: 'center',
+    fontSize: '17pt',
+    marginBottom: '20px',
+    fontFamily: 'Arvo'
   },
   iconContainer: {
     textAlign: 'center'
   },
   icon: {
-    height: '100px'
-    , width: '100px'
+    height: '100px',
+    width: '100px'
   }
 }
 
@@ -50,8 +50,8 @@ class Title extends PureComponent {
   }
 
   static propTypes = {
-    slideData: T.object
-    , className: T.string
+    slideData: T.object,
+    className: T.string
   }
 
   render() {
@@ -61,8 +61,8 @@ class Title extends PureComponent {
       <div className={ className } style={ styles.container }>
         <div
           style={ {
-            ...slideContentFlexibleHeight
-            , ...styles.titleContainer
+            ...slideContentFlexibleHeight,
+            ...styles.titleContainer
           } }
         >
           <div
@@ -76,8 +76,8 @@ class Title extends PureComponent {
             key='title'
             id='title'
             style={ {
-              ...styles.title
-              , color: globalColors.textColor
+              ...styles.title,
+              color: globalColors.textColor
             } }
           >
             { slideData.title }
@@ -86,8 +86,8 @@ class Title extends PureComponent {
             key='subtitle'
             id='subtitle'
             style={ {
-              ...styles.subtitle
-              , color: globalColors.textColor
+              ...styles.subtitle,
+              color: globalColors.textColor
             } }
           >
             { slideData.subtitle }

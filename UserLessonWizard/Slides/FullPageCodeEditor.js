@@ -20,8 +20,6 @@ import 'codemirror/addon/hint/show-hint'
 import 'codemirror/addon/hint/javascript-hint'
 import 'codemirror/addon/hint/show-hint.css'
 
-const defaultExampleHtml = 'Example'
-
 const codeEditorHeight = 'calc(50vh - 200px)'
 
 const styles = theme => ({
@@ -179,21 +177,21 @@ class FullPageCodeEditor extends PureComponent {
   }
 
   static propTypes = {
-    slideData: T.object
-    , className: T.string
-    , input: T.object
-    , setFormGlobalVariable: T.func.isRequired
-    , postUserVariable: T.func.isRequired
-    , putUserVariable: T.func.isRequired
-    , afterRunCode: T.func.isRequired
-    , userId: T.string.isRequired
-    , onRunCode: T.func.isRequired
-    , classes: T.object.isRequired
-    , runCode: T.bool.isRequired
-    , variablesWithUserValues: T.array
-    , userVariables: T.array
-    , lesson: T.object
-    , formValues: T.object
+    slideData: T.object,
+    className: T.string,
+    input: T.object,
+    setFormGlobalVariable: T.func.isRequired,
+    postUserVariable: T.func.isRequired,
+    putUserVariable: T.func.isRequired,
+    afterRunCode: T.func.isRequired,
+    userId: T.string.isRequired,
+    onRunCode: T.func.isRequired,
+    classes: T.object.isRequired,
+    runCode: T.bool.isRequired,
+    variablesWithUserValues: T.array,
+    userVariables: T.array,
+    lesson: T.object,
+    formValues: T.object
   }
 
   toggleIsExampleActive = () =>
@@ -285,15 +283,14 @@ const mapStateToProps = (state, ownProps) => {
   const userVariables = Object.values(userVariablesById)
 
   return {
-    userVariables
-    , userId
+    userVariables, userId
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    postUserVariable: params => dispatch(postUserVariable(params))
-    , putUserVariable: params => dispatch(putUserVariable(params))
+    postUserVariable: params => dispatch(postUserVariable(params)),
+    putUserVariable: params => dispatch(putUserVariable(params))
   }
 }
 

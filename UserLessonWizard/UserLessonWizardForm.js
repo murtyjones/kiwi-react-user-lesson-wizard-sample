@@ -23,17 +23,15 @@ import Title from './Slides/Title'
 import MultipleChoice from './Slides/MultipleChoice'
 import Narration from './Slides/Narration'
 
-import './overrides.css'
-
 const formName = 'userLesson'
 
 const styles = theme => ({
   lessonWizardForm: {
-    height: 'calc(100% - 60px)' // 60px for action bar
-    , overflow: 'auto'
-    , position: 'absolute'
-    , top: 0
-    , zIndex: 502
+    height: 'calc(100% - 60px)', // 60px for action bar
+    overflow: 'auto',
+    position: 'absolute',
+    top: 0,
+    zIndex: 502
   },
   generalSlide: {
     width: 1050,
@@ -41,7 +39,7 @@ const styles = theme => ({
     left: '50%'
   },
   fullPageCodeSlide: {
-    width: 1300,
+    width: 1300
     marginLeft: -650,
     left: '50%'
   },
@@ -80,30 +78,30 @@ class UserLessonWizardForm extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      activeSlideObject: null
-      , prevDisabled: null
-      , nextDisabled: null
-      , isFinal: null
-      , runCode: false
-      , codeRanAtLeastOnce: false
-      , showResultCard: false
-      , checkAnswer: false
+      activeSlideObject: null,
+      prevDisabled: null,
+      nextDisabled: null,
+      isFinal: null,
+      runCode: false,
+      codeRanAtLeastOnce: false,
+      showResultCard: false,
+      checkAnswer: false
     }
   }
 
   static propTypes = {
-    onSubmit: T.func.isRequired
-    , activeSlideIndex: T.number.isRequired
-    , lesson: T.object.isRequired
-    , globalColors: T.object.isRequired
-    , formValues: T.object.isRequired
-    , goToNextSlide: T.func.isRequired
-    , goToPrevSlide: T.func.isRequired
-    , handleSubmit: T.func.isRequired
-    , dispatch: T.func.isRequired
-    , onFinalSlideNextClick: T.func.isRequired
-    , isFetchingUserLessons: T.bool.isRequired
-    , variablesWithUserValues: T.array.isRequired
+    onSubmit: T.func.isRequired,
+    activeSlideIndex: T.number.isRequired,
+    lesson: T.object.isRequired,
+    globalColors: T.object.isRequired,
+    formValues: T.object.isRequired,
+    goToNextSlide: T.func.isRequired,
+    goToPrevSlide: T.func.isRequired,
+    handleSubmit: T.func.isRequired,
+    dispatch: T.func.isRequired,
+    onFinalSlideNextClick: T.func.isRequired,
+    isFetchingUserLessons: T.bool.isRequired,
+    variablesWithUserValues: T.array.isRequired
   }
 
   UNSAFE_componentWillMount() {
@@ -116,9 +114,9 @@ class UserLessonWizardForm extends Component {
 
   UNSAFE_componentWillReceiveProps(nextProps) {
     const lessonHasChanged = !isEqual(nextProps.lesson, this.props.lesson)
-      , activeSlideIndexHasChanged = !isEqual(nextProps.activeSlideIndex, this.props.activeSlideIndex)
-      , isFetchingUserLessonsHasChanged = !isEqual(nextProps.isFetchingUserLessons, this.props.isFetchingUserLessons)
-      , formValuesHasChanged = !isEqual(nextProps.formValues, this.props.formValues)
+    const activeSlideIndexHasChanged = !isEqual(nextProps.activeSlideIndex, this.props.activeSlideIndex)
+    const isFetchingUserLessonsHasChanged = !isEqual(nextProps.isFetchingUserLessons, this.props.isFetchingUserLessons)
+    const formValuesHasChanged = !isEqual(nextProps.formValues, this.props.formValues)
 
     if (lessonHasChanged || activeSlideIndexHasChanged) {
       this.setActiveSlideObject(nextProps.activeSlideIndex, nextProps.lesson)
@@ -232,11 +230,11 @@ class UserLessonWizardForm extends Component {
     // the render method! otherwise child
     // components will remount on each rendering!
     const { activeSlideIndex, globalColors, variablesWithUserValues, formValues, lesson, classes } = this.props
-      , { activeSlideObject, runCode } = this.state
-      , slideTypeObject = availableSlideTypes(classes)[activeSlideObject.type]
-      , ActiveSlideComponent = slideTypeObject.component
-      , includeRunButton = slideTypeObject.includeRunButton
-      , slideAnswerData = get(formValues, `answerData[${activeSlideIndex}]`, {})
+    const { activeSlideObject, runCode } = this.state
+    const slideTypeObject = availableSlideTypes(classes)[activeSlideObject.type]
+    const ActiveSlideComponent = slideTypeObject.component
+    const includeRunButton = slideTypeObject.includeRunButton
+    const slideAnswerData = get(formValues, `answerData[${activeSlideIndex}]`, {})
 
     return fields.map((ref, i) =>
       i === activeSlideIndex
@@ -269,14 +267,14 @@ class UserLessonWizardForm extends Component {
 
   render() {
     const { classes, handleSubmit, globalColors, activeSlideIndex, formValues } = this.props
-      , { activeSlideObject, prevDisabled, nextDisabled, isFinal, runCode, showResultCard, codeRanAtLeastOnce } = this.state
-      , slideTypeObject = availableSlideTypes(classes)[activeSlideObject.type]
-      , className = slideTypeObject.className
-      , includesSuccessCriteria = hasSuccessCriteria(activeSlideObject)
-      , onPrevClick = !prevDisabled ? this.onPrev : null
-      , onNextClick = !nextDisabled ? isFinal ? this.onFinalNext : this.onNext : null
-      , slideAnswerData = get(formValues, `answerData[${activeSlideIndex}]`, {})
-      , hasBeenAnswered = codeRanAtLeastOnce || isNumeric(slideAnswerData.answer) // for multiple choice slides
+    const { activeSlideObject, prevDisabled, nextDisabled, isFinal, runCode, showResultCard, codeRanAtLeastOnce } = this.state
+    const slideTypeObject = availableSlideTypes(classes)[activeSlideObject.type]
+    const className = slideTypeObject.className
+    const includesSuccessCriteria = hasSuccessCriteria(activeSlideObject)
+    const onPrevClick = !prevDisabled ? this.onPrev : null
+    const onNextClick = !nextDisabled ? isFinal ? this.onFinalNext : this.onNext : null
+    const slideAnswerData = get(formValues, `answerData[${activeSlideIndex}]`, {})
+    const hasBeenAnswered = codeRanAtLeastOnce || isNumeric(slideAnswerData.answer) // for multiple choice slides
 
     return (
       <Fragment>
@@ -326,10 +324,10 @@ UserLessonWizardForm = connect(
 )(UserLessonWizardForm)
 
 UserLessonWizardForm = reduxForm({
-  form: formName
-  , destroyOnUnmount: false
-  , forceUnregisterOnUnmount: true
-  , enableReinitialize: true
+  form: formName,
+  destroyOnUnmount: false,
+  forceUnregisterOnUnmount: true,
+  enableReinitialize: true
 })(UserLessonWizardForm)
 
 export default withStyles(styles, { withTheme: true })(UserLessonWizardForm)

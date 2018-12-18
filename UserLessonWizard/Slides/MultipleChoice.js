@@ -68,8 +68,8 @@ class FullPageText extends PureComponent {
   }
 
   static propTypes = {
-    slideData: T.object
-    , className: T.string
+    slideData: T.object,
+    className: T.string
   }
 
   render() {

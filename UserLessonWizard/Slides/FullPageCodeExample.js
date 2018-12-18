@@ -7,36 +7,33 @@ import SpeechBubble from '../SpeechBubble'
 
 const styles = {
   fullPageExampleContainer: {
-    position: 'relative' // has to be done so that child pos:abs will work
-    , border: '1px solid #CCC'
-    , borderRadius: 15
-    , padding: 5
-    , paddingLeft: 20
-    , marginTop: 20
+    position: 'relative',
+    border: '1px solid #CCC',
+    borderRadius: 15,
+    padding: 5,
+    paddingLeft: 20,
+    marginTop: 20
   },
   container: {
-    width: 600
-    , position: 'absolute'
-    , top: '50%'
-    , left: '50%'
-    , marginLeft: -300
-    , marginTop: -250
-    , paddingTop: '5%'
+    width: 600,
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    marginLeft: -300,
+    marginTop: -250,
+    paddingTop: '5%'
   },
   exampleLabel: {
-    display: 'inline-block'
-    , position: 'absolute'
-    , top: -10
-    , left: 15
-    , background: '#FFFFFF'
-    , padding: 2
-    , paddingLeft: 10
-    , paddingRight: 10
-    , fontWeight: 'bold'
-    , fontSize: '14pt'
-  },
-  fullPageExplanationStyle: {
-
+    display: 'inline-block',
+    position: 'absolute',
+    top: -10,
+    left: 15,
+    background: '#FFFFFF',
+    padding: 2,
+    paddingLeft: 10,
+    paddingRight: 10,
+    fontWeight: 'bold',
+    fontSize: '14pt'
   }
 }
 
@@ -46,9 +43,9 @@ class FullPageCodeExample extends PureComponent {
   }
 
   static propTypes = {
-    slideData: T.object
-    , className: T.string
-    , variablesWithUserValues: T.array
+    slideData: T.object,
+    className: T.string,
+    variablesWithUserValues: T.array
   }
 
   render() {
